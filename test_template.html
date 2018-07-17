@@ -1,0 +1,1849 @@
+Content-Type: text/html
+
+<!DOCTYPE html>
+
+<head>
+  
+  <title> Islay </title>
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+ <!-- <meta charset="utf-8" >-->
+  <meta name="robots" content="ALL">
+ <meta http-equiv="content-language" content="en-gb">
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1 charset=utf-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet"/>
+
+ 
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+   <!-- <link rel="stylesheet" type="text/css" href="islay.css"/> -->
+  <!-- <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/v/bs/dt-1.10.13/datatables.min.css"/>-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css"/>-->
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+  <link rel="stylesheet" href="../jinja/MarkerCluster.css" />
+    <link rel="stylesheet" href="../jinja/MarkerCluster.Default.css" />
+  <link rel="stylesheet" href="../jinja/dissertation15.css" />
+  <link rel="stylesheet" href="../jinja/L.Control.BetterScale.css" />
+
+<link rel="stylesheet" href="../jinja/leaflet-measure.css" /> 
+
+
+  <!-- <link src="../jinja/leaflet.scalefactor.css" /> -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="./src/plugins/growl/stylesheets/jquery.growl.css" rel="stylesheet" type="text/css">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--html 5 button css 
+    <link href=" https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" type="text/css">
+<link href=" https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.csstype" type="text/css">-->
+    
+      <script src="https://maps.google.com/maps/api/js?v=3.2&sensor=false"></script> <!--google-->
+    <script src="https://matchingnotes.com/javascripts/leaflet-google.js"></script><!--google-->
+  <script src="../jinja/leaflet.markercluster-src.js"></script>
+  <script src="https://unpkg.com/proj4@2.4.4/dist/proj4-src.js"></script>
+    <script src="https://unpkg.com/proj4leaflet@1.0.2/src/proj4leaflet.js"></script>
+  <script src="https://www.geos.ed.ac.uk/~s1774346/jinja/islay2.geojson" type="text/javascript"></script>
+      <script src="../jinja/vectorgaelic.json" type="text/javascript">></script>
+    <script src="../jinja/vectornorse.json" type="text/javascript">></script>
+  <!--download plugin -->
+     <script src="../jinja/leaflet.browser.print.js"></script>
+       <script src="../jinja/leaflet.browser.print.utils.js"></script>
+         <script src="../jinja/leaflet.browser.print.sizes.js"></script>
+    
+      <script src="../jinja/farmdistrict.geojson" type="text/javascript"></script>
+  <script src="../jinja/loch.geojson" type="text/javascript"></script>
+  <script src="../jinja/leaflet-heat.js"></script> 
+  <!--<script src="../jinja/test.js"></script>-->
+  <script src="../jinja/L.Control.BetterScale.js"></script>
+  <!--measure plugin-->
+ <script src="../jinja/leaflet-measure.js"></script>
+ <!--HTML 5 button
+<script src= "https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src= "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src= "https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script src= "https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>--> 
+
+  
+</head>
+ <body id="body">
+    <div  class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!-- <div class="navbar-icon-container">
+            <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i class="fa fa-bars fa-lg white"></i></a>
+            <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i class="fa fa-search fa-lg white"></i></a>
+          </div>-->
+
+
+           <img src="../jinja/seal.png" class="nav navbar-nav" width = 50 title="Lord of the Isle Seal" ><h2 style="color:#B4EEB4" class="nav navbar-nav"><font size="206">Islay Life Explorer</font></h2>
+           </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group has-feedback">
+                 <!--  <input id="searchbox" type="text" placeholder="Search" class="form-control">
+                <span id="searchicon" class="fa fa-search form-control-feedback"></span> -->
+            </div>
+          </form>
+
+         <ul class="nav navbar-nav">
+            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn" class="about"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
+             <li><div class="greeting"></div><p style="color:#fff"> <script> document.write(new Date().toLocaleDateString()); </script></p></li>
+            </li>
+          
+           </ul>  
+
+
+        </div><!--navbar-collapse-->
+    </div>
+    
+    </div>
+</div>
+
+
+<!-- Modal for about -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h5 class="modal-title text-primary">Islay</h5>
+          
+        
+      </div>
+      
+        <div class="modal-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs for image and information -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#aboutTab" aria-controls="infoTab" role="tab" data-toggle="tab">About</a>
+                        </li>
+                        <li role="presentation"><a href="#contactTab" aria-controls="contactTab" role="tab" data-toggle="tab">Contact</a>
+                        </li>
+                        <li role="presentation"><a href="#attributionTab" aria-controls="attributionTab" role="tab" data-toggle="tab">Attribution</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes (text and images go here)-->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="aboutTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="contactTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="attributionTab"></div>
+                    </div>
+                </div>
+            </div>
+      <div class="modal-footer">
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+<!-- Modal for marker click -->
+  <div class="modal fade" id="placenameModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h5 class="modal-title text-primary" id="placename-title"></h5>
+<button  type="button" class="btn btn-default" onclick="tablesToExcel(['placename-title','infoTab','ownerTab', 'archaeologyTab', 'authorityTab','imageTab'], ['Data'],'TestBook.xls')">Export to Excel</button>
+        
+      </div>
+      
+        <div class="modal-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs for image and information -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#infoTab" aria-controls="infoTab" role="tab" data-toggle="tab">Information</a>
+                        </li>
+                        <li role="presentation"><a href="#imageTab" aria-controls="imageTab" role="tab" data-toggle="tab">Images</a>
+                        </li>
+                        <li role="presentation"><a href="#ownerTab" aria-controls="ownerTab" role="tab" data-toggle="tab">Ownership</a>
+                        </li>
+                       <li role="presentation"><a href="#archaeologyTab" aria-controls="archaeologyTab" role="tab" data-toggle="tab">Archaeology</a>
+                        <li role="presentation"><a href="#authorityTab" aria-controls="authorityTab" role="tab" data-toggle="tab">Authorities</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes (text and images go here)-->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="infoTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="ownerTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="archaeologyTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="imageTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="authorityTab"></div>
+                    </div>
+                </div>
+            </div>
+      <div class="modal-footer"> 
+        <div>
+        Select base map
+         <button type="button" id = "OSOpenData" class="btn btn-info" data-dismiss="modal">Modern Ordnance Survey</button>
+        <button type="button" id = "OS_1920s" class="btn btn-info" data-dismiss="modal">Ordance Survey 1920s</button>
+        <button type="button" id = "esriworld_imagery" class="btn btn-info" data-dismiss="modal">ESRI World Imagery</button>
+        <button type="button" id = "esriworld_terrain" class="btn btn-info" data-dismiss="modal">ESRI World Topo</button>
+      </div>
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    
+
+
+<!-- Modal for people click -->
+  <div class="modal fade" id="peoplenameModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h5 class="modal-title text-primary" id="placename-title"></h5>
+<button  type="button" class="btn btn-default" onclick="tablesToExcel(['placename-title','infoTab','ownerTab', 'archaeologyTab', 'authorityTab','imageTab'], ['Data'],'TestBook.xls')">Export to Excel</button>
+        
+      </div>
+      
+        <div class="modal-body">
+                <div role="tabpanel">
+                    <!-- Nav tabs for image and information -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#peopleinfoTab" aria-controls="peopleinfoTab" role="tab" data-toggle="tab">Information</a>
+                        </li>
+                   <!--     <li role="presentation"><a href="#imageTab" aria-controls="imageTab" role="tab" data-toggle="tab">Images</a>
+                        </li>-->
+                        <li role="presentation"><a href="#relativesTab" aria-controls="relativesTab" role="tab" data-toggle="tab">Relatives</a>
+                        </li>
+                     <li role="presentation"><a href="#placeTab" aria-controls="placeTab" role="tab" data-toggle="tab">Place</a>
+                     <!--   <li role="presentation"><a href="#authorityTab" aria-controls="authorityTab" role="tab" data-toggle="tab">Authorities</a>
+                        </li>-->
+                    </ul>
+                    <!-- Tab panes (text and images go here)-->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="peopleinfoTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="relativesTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="placeTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="imageTab"></div>
+                        <div role="tabpanel" class="tab-pane" id="authorityTab"></div>
+                    </div>
+                </div>
+            </div>
+      <div class="modal-footer"> 
+        <button type="button" id="close" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+     <!--- Map area-->
+  <div class='content-left' id="mapid">
+
+  </div>
+  </div>
+
+
+
+
+<!--- This creates the navigation tabs beside the mapand their content --->
+<div>
+<div class="container" id="infoBox">
+  <div>
+         <ul class="nav nav-tabs ">
+           <li class="active"><a href="#home">Symbols</a></li>
+           <li><a href="#menu1">Map Tools</a></li>
+           <li><a href="#menu2">People</a></li>
+            <li><a href="#menu3">Useful Resources</a></li>
+         </ul>
+
+    </div>
+
+<div class="tab-content" >
+        <div id = "home" class="tab-pane fade in active" >
+          <div>
+<!--  <form id='categories'>-->
+ <input type='checkbox' name='filters' onclick='show();' id='Rock' value='Rock' checked> Rock</input>
+  <input type='checkbox' name='filters' onclick='show();' value='Knoll' checked> Knoll</input>
+<!--  </form> -->
+  <button type="button" id="filter" class="btn btn-success">All</button>
+ <!-- <input type='checkbox' name='filters' onclick='showStations();' value='orange' checked> orange</input>
+  <input type='checkbox' name='filters' onclick='showStations();' value='yellow' checked> yellow</input>
+  <input type='checkbox' name='filters' onclick='showStations();' value='blue' checked> blue</input></div>-->
+</div>
+
+           {% for item in icons %} 
+             <img  src={{ item[1] }} height=30 width=30 />{{ item[2] }} 
+ 
+  
+              {% endfor %}
+
+<hr>
+<div>
+   <h3>Day/night switch</h3>
+<h4>Click the switch to change between daytime and nighttime reading</h4>
+  <input type="checkbox" id = "toggle-box-checkbox"  data-toggle="toggle" data-on = "Night" data-off = "Day">
+</div></div>
+
+ 
+
+
+ <!-- <div class="tab-content" >
+        <div id = "home" class="tab-pane fade in active" >
+           {% for item in icons %} 
+             <img  src={{ item[1] }}  height=40 width=40 title="{{ item[2] }} "/>
+              {% endfor %}
+
+           </div>-->
+
+        <div id="menu1" class="tab-pane fade">
+         <div>
+                <!--  <h1>Query by Placename Name</h1>
+              <p>Query the Islay Geographical Names Data Base using the origin, or type such as loch, rocks or any other geographical feature. .</p>-->
+            <hr>
+             <h4>Map Overlays</h4>   
+             <p> Find useful maps that can be overlain on current map </p>   
+            <div class="btn-group dropdown todos" id="todos">
+            <button class="btn btn-default dropdow
+
+            n-toggle botn-todos" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Geology<span class="caret caret-posicion"></span></button>
+            <ul class="dropdown-menu ancho-todos" aria-labelledby="dropdownMenu1">
+              <li><a href="#" ><input type="checkbox" id= "BGS625control"><span>GBR BGS 1:625k Bedrock Age  </span></a></li>
+              <li><a href="#"><input type="checkbox" id= "superficial50k_control"><span> GBR BGS 1:50k Superficial Deposits</span></a></li>
+              <li><a href="#"><input type="checkbox" id= "bedrock50k_control"> GBR BGS 1:50k Bedrock </a></li>
+            <!-- <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre"> Entregado</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre2"> Entregado al 2do intento</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="nose"> No se puede entregar</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="cancelado"> Cancelado</a></li> -->
+            </ul>
+
+          </div>
+         <div class="btn-group dropdown todos" id="todos">
+            <button class="btn btn-default dropdown-toggle botn-todos" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="falsw" aria-expanded="false"> Historical<span class="caret caret-posicion"></span></button>
+            <ul class="dropdown-menu ancho-todos" aria-labelledby="dropdownMenu2">
+              <li><a href="#" ><input type="checkbox" id= "sixinch_control"><span>Ordnance Survey Six Inch, 1843-1882 </span></a></li>
+              <li><a href="#" ><input type="checkbox" id= "OSOneInchNatgrid_control"><span>Scotland - OS One Inch, 1945-1948 </span></a></li>
+             <li><a href="#" ><input type="checkbox" id= "oneinchseventh_control"><span>Great Britain - OS One Inch 7th series, 1955-61 </span></a></li>
+              <!--  <li><a href="#"><input type="checkbox" id= "layercontrol3"><span> BGS50K superficial </span></a></li>
+              <li><a href="#"><input type="checkbox" id= "layercontrol4"> BGS50K bedrock </a></li>
+           <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre"> Entregado</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre2"> Entregado al 2do intento</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="nose"> No se puede entregar</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="cancelado"> Cancelado</a></li> -->
+            </ul>
+      </div>
+            <div class="btn-group dropdown todos" id="todos">
+            <button class="btn btn-default dropdown-toggle botn-todos" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="falsw" aria-expanded="false"> Land Capability<span class="caret caret-posicion"></span></button>
+            <ul class="dropdown-menu ancho-todos" aria-labelledby="dropdownMenu2">
+              <li><a href="#" ><input type="checkbox" id= "LCA250k_control"><span>Land Capability for Agriculture </span></a></li>
+              <li><a href="#" ><input type="checkbox" id= "LCF250k_control"><span>Land Capability for Forestry</span></a></li>
+              <!--  <li><a href="#"><input type="checkbox" id= "layercontrol3"><span> BGS50K superficial </span></a></li>
+              <li><a href="#"><input type="checkbox" id= "layercontrol4"> BGS50K bedrock </a></li>
+           <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre"> Entregado</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="entre2"> Entregado al 2do intento</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="nose"> No se puede entregar</a></li>
+              <li><a href="#"><input value="1" name="busqueda1" type="radio" class="cancelado"> Cancelado</a></li> -->
+            </ul>
+           
+      </div>
+      <hr>
+      <div>
+        <h4>Compare maps</h4>
+        <p> Click button to see a side by side comparison of maps </p>
+         <input type="button" value="Side by side comparison" onclick="window.location.href='https://www.geos.ed.ac.uk/~s1774346/jinja/comparemaps.html'" />
+      </div>
+      <hr>
+               
+
+                        <div>
+                            <h4> View Map Scale </h4>
+                            <label><input name="scalecheck"  value="1" type="checkbox">Map Scale</label>
+                            <div id = "radio" class="buttons">
+                                <input type="radio" name="scale" id="linearcheck">Linear Scale<br/>
+                                <input type="radio" name="scale" id="bettercheck">Alternating Scale Bar<br/>
+                            </div>
+                              <hr>
+                            <h3>Measurement Switch</h3>
+<p>Check the box to show measurement tool to calculate area and distance</p>
+<label><input id="measurecheck"  value="1" type="checkbox">Measurement</label>
+
+<hr>
+                           <!-- <h2>Opacity slider for parish boundary(fix)</h2>
+                            <span id="opacity-slider">0.5</span>
+                                  <input type="range" id="toggleOpacity" min="0" max="1" step="0.1" value="0.5" />-->
+                       <!--        <div class="btn-group">
+        <input type="button"class="btn btn-default"  id="allmarkers">Submit</input>
+        <input type="checkbox" id="Rock">Rock</input>
+        <input type='checkbox' id= "Knoll">Knoll</input>
+    </div>-->
+                        </div> 
+
+                        
+                    </div> 
+                  
+                </div> 
+                 <div id="menu2" class="tab-pane fade">
+
+                    <div >
+                      {% for item in people %}
+                      <a href="#" id="{{item[0]}}"  class="people">{{item[1]}}</a>
+                      {% endfor %}
+
+                     </div>
+                      <div style="display: none;">
+                      {% for item in markers %}
+                      <a href="#" id="{{item[0]}}"  class="placename"></a>
+                      {% endfor %}
+
+                     </div>
+                 </div> 
+           
+                 <div id="menu3" class="tab-pane fade">
+                     <div>
+                       <h1>Resources</h1>
+                       <p>You can find for information on historical and archaeological information, on the following websites</p>
+<table class='table table-striped table-bordered table-condensed'><tr><th><a href="https://maps.nls.uk/" target="_blank">
+  <img src="../jinja/nls.jpg" height= 70 width=100 ></th><td>The National Library of Scotland has a robust collection of maps, information about family history and photographs that document 100 years of Scottish life. Users can there explore this website to get more informatin about Islay and Scotland in general</td></tr><tr><th><a href="https://www.islayinfo.com/" target="_blank">
+  <img src="../jinja/islayinfo.jpg"  ></th><td>Islay Info provides information about tourism,whisky and food in Islay. It also has a blog section about activities in Islay</td></tr><tr><th><a href="https://www.islayinfo.com/" target="_blank">
+  <img src="../jinja/gazforscot.png"  ></th><td>The Gazetteer for Scotland is a vast geographical encyclopaedia, featuring details of towns, villages, bens and glens from the Scottish Borders to the Northern Isles. The first comprehensive gazetteer produced for Scotland since 1885, it includes tourist attractions, industries and historical sites, together with histories of family names and clans, biographies of famous Scots and descriptions of historical events associated with Scotland.It contains the text of Groome's 19th Century Ordnance Gazetteer of Scotland to provide a historical perspective on many of the places described</td></tr><table>
+    
+    
+                     </div>
+                 </div> 
+            </div> 
+    
+
+
+
+
+
+        </div> 
+ </div> 
+</div>
+<!--- end of nav tabs-->
+        
+ 
+
+
+
+
+
+<!--- This  references the javascript which produces the tables and images in the marker/popup modal, div is hidden to only show in modal--->
+
+
+
+<script>
+    
+  
+  
+    //let centerPoint = L.latLng(55.7363, -6.1771);
+  
+  //let map = L.map('mapid').setView(centerPoint, 10);
+
+      var parishes = L.tileLayer('http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:Scotland_Parish&zoom={z}&x={x}&y={y}&format=image/png',{
+      title: 'Counties',
+        mosaic_id: '2',
+      visible: true,
+
+      typename: 'nls:Britain_Parish',
+      attribution: 'Parish Boundaries Copyright Scottish Government, contains Ordnance Survey data &copy; Crown copyright and database right (2017)'
+     
+    });
+
+
+
+      var counties = L.tileLayer('http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:Britain_Counties&zoom={z}&x={x}&y={y}&format=image/png',{
+      title: "Counties",
+        mosaic_id: '1',
+      visible: true,
+      typename: 'nls:Britain_County',
+//      maxResolution: 38.21851414258813,
+       attribution: '' 
+    });
+  
+      var unitary_authorities = L.tileLayer('http://geoserver.nls.uk/geoserver/gwc/service/gmaps?layers=nls:district_borough_unitary_region&zoom={z}&x={x}&y={y}&format=image/png',{
+      title: "Unitary Authorities",
+        mosaic_id: '2',
+      visible: true,
+      typename: 'nls:district_borough_unitary_region',
+         attribution: 'Unitary authorities from OS Boundary Line. Contains OS data &copy; Crown copyright and database right (2017).'
+               
+                   
+    });
+
+  var  OSOpenData = L.tileLayer('http://geo.nls.uk/maps/opendata/{z}/{x}/{y}.png',{
+          title: 'Background map - OS Opendata',
+         mosaic_id: '5',
+        type: 'base',
+          visible: false, 
+            attribution: '<a href="http://www.ordnancesurvey.co.uk/oswebsite/opendata/">Ordnance Survey OpenData</a>. Contains OS data &#9400; Crown copyright and database right (2010). ',
+            // minZoom: 10,
+            maxZoom: 17,
+         
+          });
+                 
+
+ 
+  var OS_1920s = L.tileLayer('https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
+    attribution: '<a href="https://geo.nls.uk/maps/">National Library of Scotland Historic Maps</a>',
+
+    bounds: [[49.6, -12], [61.7, 3]],
+    minZoomLevel: 6,
+        numZoomLevels: 17, 
+    subdomains: '0123'
+  });
+
+  var esriworld_imagery= L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    minZoom : 6,
+    maxZoom: 17,
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  });
+  var esriworld_terrain =  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    minZoom : 6,
+    maxZoom: 17,
+  attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC,USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+});
+
+  
+
+  var map = L.map("mapid",{
+    zoom: 10,
+    center: [55.7363, -6.1771],
+    layers: [ OSOpenData, esriworld_terrain,OS_1920s, esriworld_imagery],
+    zoomControl: true,
+   
+    attributionControl: true,
+   // measureControl: true
+
+
+  }); 
+
+
+  
+  var baseLayers = {
+         "ESRI World Topo":esriworld_terrain,
+       "ESRI World Imagery": esriworld_imagery,
+        "Ordance Survey 1920s": OS_1920s,
+        "Modern Ordnance Survey": OSOpenData
+        
+  };
+
+
+  //generate marker
+  // var myRenderer = L.canvas({ padding: 5 });
+  var markers= L.markerClusterGroup({
+     chunkedLoading: true,
+    disableClusteringAtZoom: 15,
+      minZoom : 2
+
+  });
+
+
+    //generate marker
+  // var myRenderer = L.canvas({ padding: 5 });
+  var markers= L.markerClusterGroup({
+     chunkedLoading: true,
+    disableClusteringAtZoom: 15,
+      minZoom : 2
+
+  });
+
+
+  {% for item in markers %}
+ 
+//create mapa icons from database
+  var mapicons= L.icon({
+        iconUrl: '{{ item[2] }}',
+        iconSize: [30, 30]
+        
+    });
+
+  var marker{{ item[0] }} = L.marker({{ item[3:] }}, {icon: mapicons})
+  marker{{ item[0] }}.bindTooltip('{{ item[1] }}');
+  
+  markers.addLayer(marker{{ item[0] }});
+  map.addLayer(markers)
+
+ //this opens the marker modal popup on click of marker
+
+
+
+/*var filters = document.getElementById('colors').filters;
+ uniqueModality = [];
+   function showStations() {
+      for(var i = 0; i < filters.length; i++){
+        if (filters[i].checked) 
+            uniqueModality.push(filters[i].value);
+
+        }
+     
+        }
+$.getJSON("/~s1774346/cgi-bin/queries.py", function(result) {
+  var modalityFeatures = result.descriptions;
+  for(var i = 0; i < modalityFeatures.length; i++){
+    if(uniqueModalityindexOf(result.modalityFeatures[i].desc) !== -1){
+      clusterGroup.addLayer();
+    }
+  }
+    console.log(result.descriptions
+ console.log(uniqueModality)
+  });*/
+ 
+
+
+   /*$.ajax({
+     url: "/~s1774346/cgi-bin/queries.py",
+     async: true,
+     type: "post",
+     datatype:"json",
+     data: {'result': result },
+      //data: "",
+     success: function(result) {
+         // console.log(result);
+
+         var descriptionsarr = result.descriptions
+      //for (var i=0; i<descriptionsarr.length; i++) {
+          //  console.log(descriptionsarr[i]);
+            //a b c
+      //  }
+ 
+    //get unique modality values
+   var modalityFeatures= result
+   // var descriptionsarr = result.descriptions
+    var uniqueModality = [];
+    (function (x) {
+for (var i = 0; i < descriptionsarr .length; i++){
+         console.log(descriptionsarr[i]);
+        if (!modalityFeatures[x.descriptionsarr[i].desc]) {
+            uniqueModality.push(x.descriptionsarr[i].desc);
+            modalityFeatures[x.descriptionsarr[i].desc] = true;
+          }
+        }
+    });
+  
+ // console.log(descriptionsarr );  
+ // console.log(result); 
+  console.log(result); 
+   console.log(modalityFeatures); 
+   console.log(uniqueModality);
+}
+  });*/
+
+  
+ marker{{item[0]}}.on({
+
+  click: function (evt) {
+   $.ajax({
+     url: "/~s1774346/cgi-bin/queries.py",
+     async: true,
+     type: "post",
+     datatype:"json",
+     data: {'pid': {{item[0]}} },
+      //data: "",
+
+     success: function(result) {
+            console.log(result)
+            console.log(result.placeinfo.description)
+             console.log(result.placeinfo.supplementary)
+             console.log(result.placeinfo.survey)
+         
+          //  console.log(result.owners[0])
+             
+             var ownerarr = result.owners
+             var imagearr = result.images
+             var archaeologyarr = result.archaeological
+             var authorityarr = result.authorities
+            var originarr = result.origins
+            // arr.forEach(function(d) {
+            // console.log(d.place_id, d.comment);
+             //console.log(result.places.comment)
+        html ='<table class="table table-striped table-bordered table-condensed"> '    
+       for (var i = 0; i < imagearr.length; i++) {
+         html=html+'<tr><td></td></tr><tr><td><img height=300px width=300px src=' + imagearr[i].imagepath + ' ></img></td></tr>';
+         console.log(imagearr[i].imagepath);}
+         html=html+'</table>';
+        $('#imageTab').html(html);
+
+
+        html='<table  class="table table-striped table-bordered table-condensed"><caption>Archaeological Description</caption><tr><th>NMRS Site Number</th><th>Grid Reference</th><th>Archaeological Notes</th></tr>'
+      for (var i = 0; i < archaeologyarr.length; i++) {
+       html=html+'<tr><td>'+ archaeologyarr[i].NMRS +'</td>' + '<td>' + archaeologyarr[i].grid_reference + '</td>'+ '<td>' + archaeologyarr[i].notes + ''+archaeologyarr[i].notes2+ '</td></tr>';
+         console.log(archaeologyarr[i].NMRS + ", " + archaeologyarr[i].notes);}
+        html=html+'</table>';
+        $('#archaeologyTab').html(html);
+
+
+      //  html='<table  class="table table-striped table-bordered table-condensed"><caption>Archaeological Description</caption>'
+     // for (var i = 0; i < archaeologyarr.length; i++) {
+      // html=html+'<tr><th>NMRS Site Number</th><td>'+ archaeologyarr[i].NMRS +'</td></tr>' + '<tr><th>Grid Reference</th><td>' + archaeologyarr[i].grid_reference + '</td></tr>'+ '<tr><th>Archaeological Notes</th><td>' + archaeologyarr[i].notes + '</td></tr>';
+     //    console.log(archaeologyarr[i].NMRS + ", " + archaeologyarr[i].notes);}
+      //  html=html+'</table>';
+       // $('#archaeologyTab').html(html);
+
+        html='<table  class="table table-striped table-bordered table-condensed"><caption>Name of Authority on which the Place name is the Propery of.</caption><thead><tr><th>Owner</th><th>Title</th><th>House</th><th>Year</th></tr></thead>'
+       for (var i = 0; i < ownerarr.length; i++) {
+        html=html+'<tbody><tr><td>'+ ownerarr[i].name +'</td>' + '<td>'  + ownerarr[i].title + '</td>' +'<td>' + ownerarr[i].house + '</td>'+ '<td>' + ownerarr[i].year + '</td></tr></tbody>';
+         console.log(ownerarr[i].name + ", " + ownerarr[i].year);}
+        html=html+'</table>';
+        $('#ownerTab').html(html);
+
+
+      html='<table  class="table table-striped table-bordered table-condensed"><caption>Authorities for the data relating to the Place name from 1878 Name Book</caption><thead><tr><th>Name</th><th>Title</th><th>Residence</th></tr></thead>'
+       for (var i = 0; i < authorityarr.length; i++) {
+        html=html+'<tbody><tr><td>'+ authorityarr[i].name +'</td>' + '<td>' + authorityarr[i].title + '</td>' +'<td>' + authorityarr[i].residence + '</td></tr></tbody>';
+         console.log(authorityarr[i].name + ", " + authorityarr[i].title);}
+        html=html+'</table>';
+        $('#authorityTab').html(html);
+   
+
+ html = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Old Name</th><td>" + result.placeinfo.old_name  + "</td></tr>" +  "<tr><th>Modern Place name from the 1979 survey</th><td>" + result.placeinfo.name_1979 + "</td></tr>" + "<tr><th>Meaning</th><td>" + result.placeinfo.meaning + "</td></tr>" + "<tr><th>Description</th><td>" + result.placeinfo.description + "</td></tr>" + "<tr><th>Comments</th><td>" + result.placeinfo.comments + "</td></tr>" +"<tr><th>Easting</th><td>" + result.placeinfo.easting + "</td></tr>" + "<tr><th>Northing</th><td>" + result.placeinfo.northing + "</td></tr>" +  "<tr><th>Latitude</th><td>" + result.placeinfo.latitude + "</td></tr>" + "<tr><th>Longitude</th><td>" + result.placeinfo.longitude + "</td></tr>"  + "<tr><th>Survey</th><td>" + result.placeinfo.survey  + "</td></tr>" + "<tr><th>Sheet Number</th><td>" + result.placeinfo.sheet_number + "</td></tr>" + "<tr><th>Supplementary</th><td>" + result.placeinfo.supplementary +"" + result.placeinfo.supplementarycontd + "</td></tr>"  +  "<tr><th>Origin</th><td>"+ ' ' + "<table>"
+
+    //this reference origin in the info tab 
+      for (var i = 0; i < originarr.length; i++) {
+       html= html + originarr[i].origintype + '</td></tr>';
+         console.log(originarr[i].originid + ", " + originarr[i].origintype);}
+        html= html +'</table>';
+        
+
+   $('#infoTab').html(html)
+
+
+    //     $('#infoTab').html("<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Old Name</th><td>" + result.placeinfo.old_name  + "</td></tr>" +  "<tr><th>Name after 1979 survey</th><td>" + result.placeinfo.name_1979 + "</td></tr>" + "<tr><th>Meaning</th><td>" + result.placeinfo.meaning + "</td></tr>" + "<tr><th>Description</th><td>" + result.placeinfo.description + "</td></tr>" + "<tr><th>Comments</th><td>" + result.placeinfo.comments + "</td></tr>" +"<tr><th>Easting</th><td>" + result.placeinfo.easting + "</td></tr>" + "<tr><th>Northing</th><td>" + result.placeinfo.northing + "</td></tr>" +  "<tr><th>Latitude</th><td>" + result.placeinfo.latitude + "</td></tr>" + "<tr><th>Longitude</th><td>" + result.placeinfo.longitude + "</td></tr>" + "<tr><th>Survey</th><td>" + result.placeinfo.survey + "</td></tr>" + "<tr><th>Sheet Number</th><td>" + result.placeinfo.sheet_number + "</td></tr>" + "<tr><th>Supplementary</th><td>" + result.placeinfo.supplementary + "</td></tr>"  + "<table>");
+
+           $("#placename-title").html({{item[0]}});
+           $("#placenameModal").modal("show");
+            
+            }
+             
+    });  
+  }
+});
+ {% endfor %} 
+    
+
+
+//show modal on click of about button
+$("#about-btn").click(function() {
+  $("#aboutModal").modal("show");
+  $(".navbar-collapse.in").collapse("hide");
+  return false;
+});
+
+  $(document).on('click','.people','.placename',  handleClick)
+  function handleClick(e) {
+   $.ajax({
+     url: "/~s1774346/cgi-bin/peoplequeries.py",
+     async: true,
+     type: "post",
+     datatype:"json",
+     data: {
+      
+      peopleid: $(this).attr('id'),
+      pid: $(this).attr('id')
+       
+       },
+          success:  handleModal
+          
+
+        })
+      }
+
+
+
+          function handleModal(response) {
+          
+            var relativearr = response.familyinfos
+            var placearr = response.relatedplaces
+            //console.log(result.peopleinfo.surname)
+        //  console.log(response.peopleinfo.othernames)
+          //  console.log(response.familyinfos)
+        //  console.log(response.relatedplaces)
+        //   console.log(response.relatedplaces.where)
+
+
+             html = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Surname</th><td>" + response.peopleinfo.surname  + "</td></tr>" +  "<tr><th>Other names</th><td>" + response.peopleinfo.othernames + "</td></tr>" + "<tr><th>Maiden name</th><td>" + response.peopleinfo.maiden_name + "</td></tr>" + "<tr><th>Status</th><td>" + response.peopleinfo.status + "</td></tr>" + "<tr><th>Buried at</th><td>" +response.peopleinfo.buried_at + "</td></tr>" +"<tr><th>Reference</th><td>" + response.peopleinfo.reference + "</td></tr>" + "<tr><th>Age</th><td>" + response.peopleinfo.age + "</td></tr>" +  "<tr><th>Born</th><td>" + response.peopleinfo.year_born + "</td></tr>" + "<tr><th>Married</th><td>" + response.peopleinfo.year_married + "</td></tr>"  + "<tr><th>Died</th><td>" + response.peopleinfo.year_died + "</td></tr>" + "<tr><th>Gender</th><td>" + response.peopleinfo.gender + "</td></tr>" + "<tr><th>Supplementary</th><td>" + response.peopleinfo.supplementary +"" + response.peopleinfo.supplementarycontd + "</td></tr>"  +  "<tr><th>Parish</th><td>"+ response.peopleinfo.parish + "</td></tr>" +"<table>"
+        
+   $('#peopleinfoTab').html(html)
+
+
+        html='<table  class="table table-striped table-bordered table-condensed"><caption>Blood Relatives of this person </caption><thead><tr><th>Surname</th><th>Name</th><th>Relationship</th></tr></thead>'
+       for (var i = 0; i < relativearr.length; i++) {
+        html=html+'<tbody><tr><td>'+ relativearr[i][0] +'</td>' + '<td>'  + relativearr[i][1] + '</td>' +'<td>' + relativearr[i][2]+ '</td>'+ '</tr></tbody>';
+         console.log(relativearr[i][0] + ", " + relativearr[i][1]);}
+        html=html+'</table>';
+        $('#relativesTab').html(html);
+
+
+                html='<table  class="table table-striped table-bordered table-condensed"><caption>Places </caption><thead><tr><th>name</th></tr></thead>'
+       for (var i = 0; i < placearr.length; i++) {
+        html=html+'<tbody><tr><td>'+ placearr[i].where +'</td>'+ '</tr></tbody>';
+         console.log(placearr[i].where);}
+        html=html+'</table>';
+        $('#placeTab').html(html);
+           
+           $("#peoplenameModal").modal("show");
+            }
+
+
+  
+
+   
+    
+      //data: "",
+   
+
+
+
+
+
+var measure = L.control.measure({position: 'topleft'});
+
+ //superficial50k legend (same as superficial) to map
+   $(document).ready(function(){
+    $("#measurecheck").change(function(){
+        if($(this).prop("checked")){ 
+         measure.addTo(map);
+
+    return;
+  }else {
+  
+measure.remove();
+    return;
+
+    }
+  });
+});
+
+
+//add parish boundary geojson
+  /*var parishboundary =  L.geoJson(islayData, {
+  style: function (feature) {
+    return {
+      color: "#ff0000",
+      fill: true,
+      opacity: 0.8
+    };
+  },
+// set change of colour on mouse over and show label
+  onEachFeature: function(feature, layer) {
+    layer.on('mouseover', function () {
+    this.setStyle({
+      'fillColor': '#0000ff'
+    });
+    });
+    layer.on('mouseout', function () {
+      this.setStyle({
+      'fillColor': '#228B22'
+    });
+    });
+        if (feature.properties && feature.properties.name) {
+            layer.bindTooltip(feature.properties.name, {closeButton: false, offset: L.point(0, -20)});
+            layer.on('mouseover', function() { layer.openPopup(); });
+            layer.on('mouseout', function() { layer.closePopup(); });
+            }
+        }
+
+});*/
+
+
+//add farm district geojson
+  var farmdistrict =  L.geoJson(farmdistrict, {
+  style: function (feature) {
+    return {
+      color: "#000000",
+      fill: true,
+      opacity: 0.8
+    };
+  },
+// set change of colour on mouse over and show label
+  onEachFeature: function(feature, layer) {
+    layer.on('mouseover', function () {
+    this.setStyle({
+      'fillColor': '#0000ff'
+    });
+    });
+    layer.on('mouseout', function () {
+      this.setStyle({
+      'fillColor': '#228B22'
+    });
+    });
+        if (feature.properties && feature.properties.name) {
+            layer.bindTooltip(feature.properties.name, {closeButton: false, offset: L.point(0, -20)});
+            layer.on('mouseover', function() { layer.openPopup(); });
+            layer.on('mouseout', function() { layer.closePopup(); });
+            }
+        }
+
+});
+
+//add farms with gaelic names vector geojson
+var violetIcon = L.icon({
+    iconUrl: '../jinja/violet_icon.svg',
+    iconSize:     [15, 31], // size of the icon
+    iconAnchor:   [2, 31], // point of the icon which will correspond to marker's location
+   
+});
+//add farm with gaelic placenames
+  var gaelicname =  L.geoJson(gaelic, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, {icon: violetIcon});
+
+  },
+// set icon 
+//  onEachFeature: function(feature, layer) {
+//    layer.on('mouseout', function () {
+ //  layer.setIcon(violetIcon)
+ //   });
+//    }
+});
+   
+
+//add farms with norse names vector geojson
+var orangeIcon = L.icon({
+   // iconUrl: 'orange_button.svg',
+    iconUrl: '../jinja/orange_icon.svg',
+    iconSize:     [15, 31], // size of the icon
+    iconAnchor:   [2, 31], // point of the icon which will correspond to marker's location
+   
+});
+//add farm with norse placenames
+  var norsename =  L.geoJson(norse, {
+  pointToLayer: function (feature, latlng) {
+    return L.marker(latlng, {icon: orangeIcon});
+
+  },
+
+});
+   
+
+  //add parish boundary geojson
+  var loch =  L.geoJson(loch, {
+  style: function (feature) {
+    return {
+      color: "#0000ff",
+      fill: true,
+      opacity: 0.8
+    };
+  },
+// set change of colour on mouse over and show label
+  onEachFeature: function(feature, layer) {
+    layer.on('mouseover', function () {
+    this.setStyle({
+      'fillColor': '#0000ff'
+    });
+    });
+    layer.on('mouseout', function () {
+      this.setStyle({
+      'fillColor': '#228B22'
+    });
+    });
+        if (feature.properties && feature.properties.name) {
+            layer.bindTooltip(feature.properties.name, {closeButton: false, offset: L.point(0, -20)});
+            layer.on('mouseover', function() { layer.openPopup(); });
+            layer.on('mouseout', function() { layer.closePopup(); });
+            }
+        }
+
+});
+    var overlay = {
+     
+      "<img src='../jinja/blueboundary.png'  width='8'>County Boundary": counties,
+      "<img src='../jinja/redboundary.png'  height='10'> Parish Boundary": parishes,
+      "<img src='../jinja/greenboundary.png'  height='8'>Unitary Authorities": unitary_authorities,
+  //  "<img src='../jinja/redboundary.png'  height='10'> 1930 Civil Parish Boundaries": parishboundary,
+      "<img src='../jinja/blackboundary.jpg'  height='10'>  Farm Districts": farmdistrict,
+      "Loch": loch,
+      "<img src='../jinja/violet_icon.svg'  height='10'>Gaelic Farm names": gaelicname,
+      "<img src='../jinja/orange_icon.svg'  height='10'>Norse Farm names": norsename,
+      
+    
+  };
+// opacity slider parish boundary
+$('#toggleOpacity').on('change', function(){
+    $('#opacity-slider').html(this.value);
+    parishboundary.setStyle({opacity: this.value, fillOpacity: this.value});
+   
+});
+
+  //adding the layers control to the map
+layerControl =  L.control.layers(baseLayers,overlay,{collapsed:false}).addTo(map);
+ //layerControl.addOverlay(parishboundary, " 1930 Civil Parish Boundaries");
+//layerControl.addLayer(esriworld_imagery);
+
+
+//tabs navigation
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+});
+
+
+ // Create additional Control placeholders
+    function addControlPlaceholders(map) {
+      var corners = map._controlCorners,
+        l = 'leaflet-',
+        container = map._controlContainer;
+
+      function createCorner(vSide, hSide) {
+        var className = l + vSide + ' ' + l + hSide;
+
+        corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+      }
+
+      createCorner('verticalcenter', 'left');
+      createCorner('verticalcenter', 'right');
+    }
+    addControlPlaceholders(map);
+
+    // Change the position of the Zoom Control to a newly created placeholder.
+    map.zoomControl.setPosition('verticalcenterleft');
+
+//map scale
+var scaleLinear = L.control.scale({position: 'verticalcenterleft'})
+var betterscale =  L.control.betterscale({position: 'verticalcenterleft'});
+
+$(document).ready(function(){
+    $("input[name='scalecheck']").on("change", function(){
+        var isChecked = $(this).prop("checked"); 
+        if(isChecked){
+            $(".buttons").show();
+        $("#linearcheck").prop("checked", true);
+        map.addControl(scaleLinear);
+        } else {
+            $(".buttons").hide(); 
+      map.removeControl(scaleLinear);
+      map.removeControl(betterscale);
+        }
+    }); 
+}); 
+
+
+$(document).ready(function(){
+    $("#linearcheck").change(function(){
+        if($(this).prop("checked")){ 
+        $("radio").show();
+    map.removeControl(betterscale);
+    map.addControl(scaleLinear);
+    return;
+  }
+  
+    map.removeControl(scaleLinear);
+    return;
+
+  
+  });
+}); 
+
+
+
+$(document).ready(function(){
+    $("#bettercheck").change(function(){
+        if($(this).prop("checked")){ 
+        $("radio").show();
+    map.removeControl(scaleLinear);
+    map.addControl(betterscale);
+    return;
+  }else {
+  
+    map.removeControl(betterscale);
+    return;
+
+    }
+  });
+});
+
+
+
+
+/*var betty =  L.control.scalefactor();
+
+$(document).ready(function(){
+    $("#checksx").change(function(){
+        if($(this).prop("checked")){ 
+        $("radio").show();
+
+    
+    map.addControl(betty);
+    return;
+  }else {
+  
+    map.removeControl(scaleLinear);
+    return;
+
+    }
+  });
+});*/
+
+  // google hybrid
+  /*    var google_hybrid_overlay = L.tileLayer('https://mts{s}.google.com/vt/lyrs=h@186112443&hl=x-local&src=app&x={x}&y={y}&z={z}&s=Galile', {
+        subdomains: '0123',
+        attribution: '&copy; Google Maps',
+        zIndex: 4
+      })
+      google_hybrid_overlay.setOpacity(0);
+      map.addLayer(google_hybrid_overlay)
+      // listen for google maps
+      map.on('click', function(eo)
+      {
+        if( eo.name == 'Google' ) {
+          google_hybrid_overlay.setOpacity(1);
+        }
+        else {
+          google_hybrid_overlay.setOpacity(0);
+        }
+      })*/
+
+
+var allresolutions = [156543.03390625, 78271.516953125, 39135.7584765625,
+                      19567.87923828125, 9783.939619140625, 4891.9698095703125,
+                      2445.9849047851562, 1222.9924523925781, 611.4962261962891,
+                      305.74811309814453, 152.87405654907226, 76.43702827453613,
+                      38.218514137268066, 19.109257068634033, 9.554628534317017,
+                      4.777314267158508, 2.388657133579254, 1.194328566789627,
+                      0.5971642833948135, 0.2985821416974068, 0.1492910708487034,
+                      0.0746455354243517, 0.0373227677121759];
+ 
+  
+var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    maxZoom: 17,
+    visibility: true,
+    zIndex: 100,
+    attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="https://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+  });
+var WMS50bedrock =  L.tileLayer.wms('https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer?', {
+layers: 'BGS.50k.Bedrock',
+format: 'image/gif',
+crs: L.CRS.EPSG27700,
+zIndex: 100
+},
+{
+resolutions: [400000,400000,405200,405200],
+
+});
+  
+var WMS50superficial =  L.tileLayer.wms('https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer?', {
+layers:'BGS.50k.Superficial.deposits',
+format: 'image/gif',
+crs: L.CRS.EPSG27700,
+zIndex: 100,
+zoom: 4,
+},
+{
+
+keygeol: 'ogc.bgs.ac.uk/cgi-bin/BGS_GSN_Bedrock_Geology/wms?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=NAM_GSN_1M_BLS&format=image/png&STYLE=default&%E2%80%9D',
+resolutions: [400000,400000,405200,405200],
+
+});
+  
+
+/*BGS Geology 625k and 1:1 million offshore sediments*/
+var BGS625ksediments =  L.tileLayer.wms('http://ogc.bgs.ac.uk/cgi-bin/BGS_Bedrock_and_Superficial_Geology/wms?', {
+layers:'GBR_BGS_625k_BA',
+zIndex: 100,
+format: 'image/png',
+crs: L.CRS.EPSG27700,
+
+},
+{
+
+keygeol: 'ogc.bgs.ac.uk/cgi-bin/BGS_GSN_Bedrock_Geology/wms?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=NAM_GSN_1M_BLS&format=image/png&STYLE=default&%E2%80%9D',
+resolutions: [0,0,700000,1300000]
+
+});
+
+
+  //agriculture 
+ var LCA250k= L.tileLayer.wms('http://druid.hutton.ac.uk/arcgis/services/Hutton_LCA250K_UKSO/MapServer/WmsServer?',{
+
+layers : '0',
+format: 'image/png',
+crs: L.CRS.EPSG27700,
+zIndex: 100
+
+
+ });
+ //forestry
+ var LCF250k= L.tileLayer.wms('http://druid.hutton.ac.uk/arcgis/services/Hutton_LCF_250K_OSGB/MapServer/WmsServer?',{
+
+
+layers : '0',
+format: 'image/png',
+crs: L.CRS.EPSG27700,
+zIndex: 100
+
+ });
+     
+
+   var legendBedrock_625k= L.control({position: 'topright'});
+     var legendBedrock_625kURL = "http://ogc.bgs.ac.uk/cgi-bin/BGS_Bedrock_and_Superficial_Geology/wms?service=wms&version=1.1.1&request=GetLegendGraphic&layer=GBR_BGS_625k_BA&format=image/png&"
+
+    legendBedrock_625k.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML += "<a href='#' onClick=window.open('"+legendBedrock_625kURL+"','Legend','width=300,height=500,scrollbars=yes');>Click to view Legend</a>"
+
+      return div;
+    };
+
+                  
+    var legendBedrock50 = L.control({position: 'topright'});
+    var legendBedrock50URL = "http://ogc.bgs.ac.uk/cgi-bin/BGS_GSN_Bedrock_Geology/wms?version=1.3.0&service=WMS&request=GetLegendGraphic&sld_version=1.1.0&layer=NAM_GSN_1M_BLS&format=image/png&STYLE=default&%E2%80%9D"
+    legendBedrock50.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML += "<a href='#' onClick=window.open('"+legendBedrock50URL+"','Legend','width=550,height=170,0,status=0,');>Click to view Legend</a>"
+
+      return div;
+    };
+    
+
+
+     var legendLCA250k = L.control({position: 'topright'});
+     var legendLCA250kURL = "http://druid.hutton.ac.uk/arcgis/services/Hutton_LCA250K_UKSO/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0"
+//create smal window for legend
+    legendLCA250k.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'info legend');
+     div.innerHTML += "<a href='#' onClick=window.open('"+legendLCA250kURL+"','Legend','width=550,height=170,0,status=0,');>Click to view Legend</a>"
+
+      return div;
+    };   
+    var legendLCF250k = L.control({position: 'topright'});
+    var legendLCF250kURL = "http://druid.hutton.ac.uk/arcgis/services/Hutton_LCF_250K_OSGB/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0"
+    legendLCF250k.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML += "<a href='#'data-toggle='tooltip' data-placement='top' title='forestry' onClick=window.open('"+legendLCF250kURL+"','Legend','width=550,height=170,0,status=0,');>Click to view Legend</a>"
+      return div;
+    };   
+    
+
+           
+
+//bedrock625k legend to map
+$(document).ready(function(){
+    $("#BGS625control").change(function(){
+        if($(this).prop("checked")){
+          map.setZoom(10); 
+          BGS625ksediments.addTo(map);
+          legendBedrock_625k.addTo(map);
+          WMS50superficial.remove();
+          WMS50bedrock.remove();
+        legendBedrock50.remove();
+           
+    
+        $('#superficial50k_control').prop('checked', false)
+        $('#bedrock50k_control').prop('checked', false)
+    return;
+  }else {
+ 
+    legendBedrock_625k.remove();
+    BGS625ksediments.remove();
+  
+
+    return;
+
+    }
+  });
+
+  
+}); 
+ //superficial50k legend (same as superficial) to map
+   $(document).ready(function(){
+    $("#superficial50k_control").change(function(){
+        if($(this).prop("checked")){ 
+          map.setZoom(15); /*zoom to smaller scale because of type of map*/
+          WMS50superficial.addTo(map);
+          legendBedrock50.addTo(map);
+          BGS625ksediments.remove();
+          WMS50bedrock.remove();
+          legendBedrock_625k.remove();
+          
+         
+         
+           $('#BGS625control').prop('checked', false)
+           $('#bedrock50k_control').prop('checked', false)
+    return;
+  }else {
+  
+    legendBedrock50.remove();
+    WMS50superficial.remove();
+    return;
+
+    }
+  });
+});
+//bedrock50k legend  to map
+   $(document).ready(function(){
+    $("#bedrock50k_control").change(function(){
+      map.setZoom(15);
+        if($(this).prop("checked")){ 
+          WMS50bedrock.addTo(map);
+          legendBedrock50.addTo(map);
+           BGS625ksediments.remove();
+           WMS50superficial.remove();
+          legendBedrock_625k.remove();
+           $('#BGS625control').prop('checked', false)
+           $('#superficial50k_control').prop('checked', false)
+    return;
+  }else {
+  
+    legendBedrock50.remove();
+    WMS50bedrock.remove();
+    return;
+
+    }
+  });
+});
+
+
+ //add lca250k legend to map
+   $(document).ready(function(){
+    
+    $("#LCA250k_control").change(function(){
+        if($(this).prop("checked")){ 
+          map.setZoom(10); /*zoom to smaller scale because of type of map*/
+         LCA250k.addTo(map);
+          legendLCA250k.addTo(map);
+          LCF250k.remove();
+          legendLCF250k.remove();
+           $('#LCF250k_control').prop('checked', false)
+           $('#LCF250k_control').prop('checked', false)
+    return;
+  }else {
+
+          LCA250k.remove();
+             legendLCA250k.remove();
+           
+    return;
+
+    }
+  });
+});
+
+
+
+
+//add lcf250k legend to map
+   $(document).ready(function(){
+    $("#LCF250k_control").change(function(){
+        if($(this).prop("checked")){ 
+          map.setZoom(10);
+         LCF250k.addTo(map);
+          legendLCF250k.addTo(map);
+          LCA250k.remove();
+          legendLCA250k.remove();
+           $('#LCA250k_control').prop('checked', false)
+           $('#LCA250k_control').prop('checked', false)
+    return;
+  }else {
+
+          LCF250k.remove();
+          legendLCF250k.remove();
+    return;
+
+    }
+  });
+});
+
+
+
+
+
+
+
+
+  var OSOneInchNatgrid = L.tileLayer("https://geo.nls.uk/mapdata3/os/1inch_pop_nat_grid/{z}/{x}/{y}.png",{
+          title: 'Scotland - OS One Inch, 1945-1948',
+          zIndex: 100,
+          minZoom: 1,
+          maxZoom: 15,
+          group_no: '37',
+          mosaic_id: '2',
+          type: 'overlay', 
+         typename: 'nls:WFS',
+          visible: false,
+          minx: -7.88182502,
+          miny: 54.56493209,
+          maxx: -0.61174401,
+          maxy: 60.91113681
+ 
+
+    });
+
+     var Legend_OSOneInchNatgrid = L.control({position: 'topright'});
+     var Legend_OSOneInchNatgridURL = "https://geo.nls.uk/mapdata3/os/1inch_pop_nat_grid/key/openlayers.html"
+
+    Legend_OSOneInchNatgrid.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML += "<a href='#' onClick=window.open('"+Legend_OSOneInchNatgridURL+"','Legend','width=300,height=500,scrollbars=yes');>Click to view Legend</a>"
+
+      return div;
+    };
+
+  //os oneinch overlaymap to map
+   $(document).ready(function(){
+    $("#OSOneInchNatgrid_control").change(function(){
+      
+        if($(this).prop("checked")){ 
+          OSOneInchNatgrid.addTo(map);
+          Legend_OSOneInchNatgrid.addTo(map);
+          sixinch.remove();
+          Legend_sixinch.remove();
+          oneinchseventh.remove();
+          Legend_oneinchseventh.remove();
+          //BGS625ksediments.remove();
+          // BGS625ksediments.remove();
+         // legendBedrock50.addTo(map);
+         // legendBedrock_625k.remove();
+          $('#sixinch_control').prop('checked', false)
+          $('#oneinchseventh_control').prop('checked', false)
+         //  $('#superficial50k_control').prop('checked', false)
+    return;
+  }else {
+  
+   
+   OSOneInchNatgrid.remove();
+   Legend_OSOneInchNatgrid.remove();
+    return;
+
+    }
+  });
+});
+
+var oneinchseventh = L.tileLayer('https://nls-0.tileserver.com/fpsUZbc4ftb2/{z}/{x}/{y}.jpg',{
+        preload: Infinity,
+  title: "Great Britain - OS One Inch 7th series, 1955-61",
+  zIndex: 100,
+
+              minZoom: 1,
+              maxZoom: 15,
+              tilePixelRatio: 1,
+            
+        group_no: '55',
+        mosaic_id: '11',
+        typename: 'nls:catalog_one_inch_7th_series',
+        type: 'overlay', 
+        visible: false,
+        minx: -8.8, 
+  miny: 49.8,
+        maxx: 1.77, 
+        maxy: 60.9,
+  keytext: 'View the individual sheets of this OS one-inch mapping by selecting "Find by place" above'
+        
+    });
+  
+    var Legend_oneinchseventh = L.control({position: 'topright'});
+     var Legend_oneinchseventhURL = "http://geo.nls.uk/mapdata2/os/seventh/key/openlayers.html"
+
+    Legend_oneinchseventh.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML += "<a href='#' onClick=window.open('"+Legend_oneinchseventhURL +"','Legend','width=300,height=500,scrollbars=yes');>Click to view Legend</a>"
+
+      return div;
+    };
+
+ 
+
+  //six inch basemap to map
+   $(document).ready(function(){
+    $("#oneinchseventh_control").change(function(){
+      map.setZoom(10);
+        if($(this).prop("checked")){ 
+          oneinchseventh.addTo(map);
+          Legend_oneinchseventh.addTo(map);
+           OSOneInchNatgrid.remove();
+   Legend_OSOneInchNatgrid.remove();
+   sixinch.remove();
+   Legend_sixinch.remove();
+
+          //BGS625ksediments.remove();
+          // BGS625ksediments.remove();
+         // legendBedrock50.addTo(map);
+         // legendBedrock_625k.remove();
+          $('#OSOneInchNatgrid_control').prop('checked', false)
+          $('#sixinch_control').prop('checked', false)
+         //  $('#superficial50k_control').prop('checked', false)
+    return;
+  }else {
+  
+   // legendBedrock50.remove();
+    oneinchseventh.remove();
+    Legend_oneinchseventh.remove()
+    return;
+
+    }
+  });
+});
+
+
+
+var sixinch = L.tileLayer('https://geo.nls.uk/mapdata3/os/6inchfirst/{z}/{x}/{y}.png',
+    {
+        numZoomLevels: 16,
+        backgroundColor: '#eee',
+        attribution: 'Overlay NLS <a href="https://maps.nls.uk/os/6inch/index.html" target="_blank">Ordnance Survey Six Inch, 1843-1882</a> maps',
+        zIndex: 100,
+        tileOptions: {crossOriginKeyword: null},      
+        minx: -8.4, 
+        miny: 54.5, 
+        maxx: -1.4, 
+        maxy: 58.8,
+  resolutions: allresolutions,
+        serverResolutions: [156543.03390625, 78271.516953125, 39135.7584765625,
+                            19567.87923828125, 9783.939619140625,
+                            4891.9698095703125, 2445.9849047851562,
+                            1222.9924523925781, 611.4962261962891,
+                            305.74811309814453, 152.87405654907226,
+                            76.43702827453613, 38.218514137268066,
+                            19.109257068634033, 9.554628534317017,
+          4.777314267158508, 2.388657133579254],
+        transitionEffect: 'resize'
+    });
+
+     var Legend_sixinch = L.control({position: 'topright'});
+     var Legend_sixinchURL = "https://geo.nls.uk/mapdata3/os/6inchfirst/key/openlayers.html"
+
+    Legend_sixinch.onAdd = function(map) {
+      var div = L.DomUtil.create('div', 'info legend');
+      div.innerHTML += "<a href='#' onClick=window.open('"+Legend_sixinchURL+"','Legend','width=300,height=500,scrollbars=yes');>Click to view Legend</a>"
+
+      return div;
+    };
+
+  
+
+  //six inch basemap to map
+   $(document).ready(function(){
+    $("#sixinch_control").change(function(){
+      map.setZoom(10);
+        if($(this).prop("checked")){ 
+          sixinch.addTo(map);
+          Legend_sixinch.addTo(map);
+           OSOneInchNatgrid.remove();
+   Legend_OSOneInchNatgrid.remove();
+   oneinchseventh.remove();
+   Legend_oneinchseventh.remove();
+          //BGS625ksediments.remove();
+          // BGS625ksediments.remove();
+         // legendBedrock50.addTo(map);
+         // legendBedrock_625k.remove();
+          $('#OSOneInchNatgrid_control').prop('checked', false)
+         //  $('#superficial50k_control').prop('checked', false)
+    return;
+  }else {
+  
+   // legendBedrock50.remove();
+    sixinch.remove();
+    Legend_sixinch.remove()
+    return;
+
+    }
+  });
+});
+
+
+///////Basemap configuration in modal
+//add and remove OS_1920s baselayer
+$("#OS_1920s").click(function(event) {
+    //event.preventDefault();
+    if(map.hasLayer(baseLayers)) {
+    //  map.addLayer(NLS); 
+    //   $(this).addClass('selected');
+    } else {
+       map.addLayer(OS_1920s); 
+        map.removeLayer(esriworld_imagery)
+        map.removeLayer(esriworld_terrain) 
+        map.removeLayer(OSOpenData);        
+        $(this).addClass('selected');
+   }
+});
+
+//add and remove esri world imagery baselayer
+$("#esriworld_imagery").click(function(event) {
+   // event.preventDefault();
+    if(map.hasLayer(baseLayers)) {
+  // map.addLayer(esriworld_imagery); 
+  // $(this).addClass('selected');
+    } else {
+        map.addLayer(esriworld_imagery); 
+        map.removeLayer(OS_1920s)
+        map.removeLayer(esriworld_terrain)    
+        map.removeLayer(OSOpenData);   
+        $(this).addClass('selected');
+   }
+});
+
+//add and remove NLS baselayer
+$("#OSOpenData").click(function(event) {
+    //event.preventDefault();
+    if(map.hasLayer(baseLayers)) {
+    //  map.addLayer(NLS); 
+    //   $(this).addClass('selected');
+    } else {
+       map.addLayer(OSOpenData); 
+        map.removeLayer(esriworld_imagery)
+        map.removeLayer(esriworld_terrain)       
+        map.removeLayer(OS_1920s)  
+        $(this).addClass('selected');
+   }
+});
+
+//add and remove esri world imagery baselayer
+$("#esriworld_imagery").click(function(event) {
+   // event.preventDefault();
+    if(map.hasLayer(baseLayers)) {
+  // map.addLayer(esriworld_imagery); 
+  // $(this).addClass('selected');
+    } else {
+        map.addLayer(esriworld_imagery); 
+        map.removeLayer(OS_1920s)
+        map.removeLayer(esriworld_terrain)      
+        map.removeLayer(OSOpenData);  
+        $(this).addClass('selected');
+   }
+});
+//add and remove esri world terrain baselayer
+$("#esriworld_terrain").click(function(event) {
+    //event.preventDefault();
+    if(map.hasLayer(baseLayers)) {
+     
+    } else {
+        map.addLayer(esriworld_terrain); 
+        map.removeLayer(esriworld_imagery)
+        map.removeLayer(OS_1920s)  
+        map.removeLayer(OSOpenData);     
+        $(this).addClass('selected');
+   }
+});
+
+ 
+
+
+            L.control.browserPrint({}).addTo(map);
+  
+     var tablesToExcel = (function () {
+    var uri = 'data:application/vnd.ms-excel;base64,'
+    , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets>'
+    , templateend = '</x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head>'
+    , body = '<body>'
+    , tablevar = '<table>{table'
+    , tablevarend = '}</table>'
+    , bodyend = '</body></html>'
+    , worksheet = '<x:ExcelWorksheet><x:Name>'
+    , worksheetend = '</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet>'
+    , worksheetvar = '{worksheet'
+    , worksheetvarend = '}'
+    , base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
+    , format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
+    , wstemplate = ''
+    , tabletemplate = '';
+
+    return function (table, name, filename) {
+        var tables = table;
+
+        for (var i = 0; i < tables.length; ++i) {
+            wstemplate += worksheet + worksheetvar + i + worksheetvarend + worksheetend;
+            tabletemplate += tablevar + i + tablevarend ;
+        }
+
+        var allTemplate = template  + wstemplate + templateend;
+        var allWorksheet = body + tabletemplate + bodyend;
+        var allOfIt = allWorksheet + allTemplate;
+
+        var ctx = {};
+        for (var j = 0; j < tables.length; ++j) {
+            ctx['worksheet' + j] = name[j];
+        }
+
+       for (var k = 0; k < tables.length; ++k) {
+            var exceltable;
+            if (!tables[k].nodeType) exceltable = document.getElementById(tables[k]);
+            ctx['table' + k] = exceltable.innerHTML;
+        }
+
+        //document.getElementById("dlink").href = uri + base64(format(template, ctx));
+        //document.getElementById("dlink").download = filename;
+        //document.getElementById("dlink").click();
+           // Create a link to the file
+        window.location.href = uri + base64(format(allOfIt, ctx));
+
+    }
+})();
+
+/*var years = [LCF250k, LCA250k];
+layerGroup = L.layerGroup(years);
+var sliderControl = L.control.sliderControl({
+  layer: layerGroup,
+  follow: true
+});
+map.addControl(sliderControl);
+sliderControl.startSlider();*/
+
+
+
+
+var hours = new Date().getHours();//getHours() function will retrieve the hour from current time 
+  var message;
+  var morning = ('<b title="Hello! Good morning">Hoigh! Madainn mhath</b>');
+  var afternoon = ('<b title="Hello! Good afternoon">Hoigh! Feasgar  mhath</b>');
+  var evening = ('<b title="Hello! Good evening">Hoigh! Feasgar math<b>');
+
+  if (hours >= 0 && hours < 12) {
+    message = morning; 
+
+  } else if (hours >= 12 && hours < 17) {
+    message = afternoon;
+
+  } else if (hours >= 17 && hours < 24) {
+    message = evening;
+  }
+
+  $('.greeting').append(message);
+
+$('#toggle-box-checkbox').on('change', function(){
+  if(this.checked){
+    $('body').addClass('night');
+  }else{
+    $('body').removeClass('night');
+  }
+});
+// Options
+//Options can be passed via data attributes or JavaScript. For data attributes, append the option name to data-, as in data-on="Enabled" READ BOOTSTRAP TOGGLE
+
+var json = $.getJSON("/~s1774346/cgi-bin/queries.py");
+
+json.then(function(result){
+  var cafes = L.geoJson(result, {
+  filter: function(result){
+         var descriptionsarr = result.descriptions
+      for (var i=0; i<descriptionsarr.length; i++) {
+          console.log(descriptionsarr[i].desc);
+          return descriptionsarr[i].desc == "Rock" 
+        }
+          }
+})
+});
+
+ $('#cafes').on('change', function(){
+  if(this.checked){
+    map.addLayer(markers)
+  }else{
+    map.removeLayer(markers)
+  }
+});
+
+//var rock_group_markers = knoll_group_markers = new L.featureGroup();
+  
+ /*  $("#filter").click(function (evt) {
+    desc=JSON.stringify(['Rock', 'Knoll']);
+   $.ajax({
+     url: "/~s1774346/cgi-bin/sort.py",
+     async: true,
+     type: "post",
+     datatype:"json",
+     data: {'description':  desc},
+      //data: "",
+              
+     success: doSomething
+       })
+    })
+
+            //console.log(response.data[][1])
+ //dataArr.forEach(function(item) {
+ function doSomething(response) {
+            console.log(response)
+             var markersarr = response.markers
+             console.log(markersarr)
+    markers.removeLayer(markers)
+
+for (var i=0; i<markersarr.length; i++){
+var item = markersarr[i]
+//create mapa icons from database
+  var mapicons= L.icon({
+        iconUrl: item[2],
+        iconSize: [30, 30]
+        
+    });
+
+  var marker = L.marker(item[3],item[4], {icon: mapicons})
+  marker.bindTooltip(item[1]);
+  
+  markers.addLayer(marker)
+
+
+}*/
+  
+
+
+
+
+
+
+
+
+       /* var array = [];
+                 
+       for (var i = 0; i < markersarr.length; i++) {
+        if (markersarr[i][1] == 'Rock') {
+          
+           marker = new L.marker([markersarr[i][2],markersarr[i][3]])
+
+         array.push(marker)}
+        
+         //console.log(array.push(marker))
+         console.log(markersarr[i][1]);}
+         markers.removeLayer(markers)
+         markers.addLayers(array);*/
+            // Create popup if you need it
+          //  var popup = 'Your popup data' + item.description + item.title;
+       //    if (item[1] == 'Dwelling') {
+        //    console.log(item[1])
+                // Create marker
+                // if item.latlng doesn't exist you have to create it like this
+                // var latlng = new L.latLng(-43.1731, 6.6906);
+            //     {% for item in markers %}
+             //      var mapicons= L.icon({
+      //  iconUrl: '{{ item[2] }}',
+      //  iconSize: [30, 30]
+        
+    //});
+      //         L.marker({{item[3:]}}, {icon: mapicons}).addTo(rock_group_markers);
+      //         {% endfor %}  
+
+            
+   //     })
+   // }
+  //  });
+//*/
+$('#Rock').on('change', function(){
+  if(this.checked){
+    map.addLayer(markers)
+  }else{
+    map.removeLayer(markers)
+  }
+});
+
+  /* $('#Rock').change(function() {
+    if($("#Rock").prop('checked') === true){
+        // Is checked add to map
+        map.addLayer(markers);
+        map.removeLayer(markers);
+    } 
+
+    });*/
+</script>
+
+
+</body>
+</html>
