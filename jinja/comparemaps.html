@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Compare maps</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Leaflet Group plugin -->
+    <script src="../jinja/plugins/leaflet.groupedlayercontrol.js"></script>
+
+    <!--Leaflet Sync Plugin -->
+    <script src="../jinja/plugins/L.Map.Sync.js"></script>
+    <!-- Website style sheet -->
+    <link rel="stylesheet" href="../jinja/dissertation.css" />
+</head>
+<!--Header Elements -->
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <img src="../jinja/seal.png" class="nav navbar-nav" width=5 0 title="Lord of the Isle Seal">
+                <h2 id="title" class="nav navbar-nav">Islay Life Explorer</h2>
+            </div>
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right" role="search">
+                    <input type="button" class="btn btn-default" value="Go back to Islay Web Page" onclick="window.history.back()" />
+            </div>
+        </div>
+    </div>
+    <div class="compare">
+        <h1>Compare different maps by changing the layers!</h1>
+    </div>
+    <div id="map1"></div>
+    <div id="map2"></div>
+
+
+    <script>
+        //DEFAULT BASE LAYERS
+        
+          var OS_1920s = L.tileLayer('https://nls-{s}.tileserver.com/nls/{z}/{x}/{y}.jpg', {
+            attribution: '<a href="https://geo.nls.uk/maps/">National Library of Scotland Historic Maps</a>',
+        
+            bounds: [[49.6, -12], [61.7, 3]],
+            minZoomLevel: 6,
+                numZoomLevels: 17, 
+            subdomains: '0123'
+          });
+        
+        
+            var  OSOpenData = L.tileLayer('http://geo.nls.uk/maps/opendata/{z}/{x}/{y}.png',{
+                  title: 'Background map - OS Opendata',
+                 mosaic_id: '5',
+                type: 'base',
+                  visible: false, 
+                    attribution: '<a href="http://www.ordnancesurvey.co.uk/oswebsite/opendata/">Ordnance Survey OpenData</a>. Contains OS data &#9400; Crown copyright and database right (2010). ',
+                    // minZoom: 10,
+                    maxZoom: 17,
+                 
+                  })
+        
+        
+            //FIRST MAP
+              var map1 = L.map('map1',{
+            zoom: 10,
+          
+            center: [55.7363, -6.1771],
+            layers: [OSOpenData],
+            zoomControl: true,
+           
+            attributionControl: true
+           
+        
+          }); 
+        
+               
+        
+            //SECOND MAP
+                var map2 = L.map('map2', {
+                    layers: [OS_1920s],
+                    center:[55.7363, -6.1771],
+                    zoom: 10,
+                    zoomControl: true,
+                    attributionControl: true
+                });
+        
+                map1.sync(map2);
+                map2.sync(map1);
+        
+        /*Other base layers */
+                var esriworld_imagery= L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            minZoom : 6,
+            maxZoom: 17,
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+          });
+          var esriworld_terrain =  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            minZoom : 6,
+            maxZoom: 17,
+          attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC,USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+        });
+        
+            //add the base layers to an JSON-object
+             var baseLayers = {
+                 "ESRI World Topo":esriworld_terrain,
+               "ESRI World Imagery": esriworld_imagery,
+                "Ordance Survey 1920s": OS_1920s,
+                "Modern Ordnance Survey": OSOpenData
+                
+          };
+        
+        
+        /*GEOLOGY*/
+        var WMS50bedrock =  L.tileLayer.wms('https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer?', {
+        layers: 'BGS.50k.Bedrock',
+        format: 'image/gif',
+        crs: L.CRS.EPSG27700,
+        //zIndex: 100
+        });
+        
+        var WMS50superficial =  L.tileLayer.wms('https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer?', {
+        layers:'BGS.50k.Superficial.deposits',
+        format: 'image/gif',
+        
+        //zIndex: 100,
+        zoom: 4,
+        });
+         
+        
+        
+        /*BGS Geology 625k and 1:1 million offshore sediments*/
+        var BGS625ksediments =  L.tileLayer.wms('http://ogc.bgs.ac.uk/cgi-bin/BGS_Bedrock_and_Superficial_Geology/wms?', {
+        layers:'GBR_BGS_625k_BA',
+        //zIndex: 100,
+        format: 'image/png',
+        
+        
+        });
+        
+        /*LAND CAPABILITY*/
+          //agriculture 
+         var LCA250k= L.tileLayer.wms('http://druid.hutton.ac.uk/arcgis/services/Hutton_LCA250K_UKSO/MapServer/WmsServer?',{
+        
+        layers : '0',
+        format: 'image/png',
+        crs: L.CRS.EPSG27700,
+        //zIndex: 100
+         });
+         //forestry
+         var LCF250k= L.tileLayer.wms('http://druid.hutton.ac.uk/arcgis/services/Hutton_LCF_250K_OSGB/MapServer/WmsServer?',{
+        
+        layers : '0',
+        format: 'image/png',
+        
+        //zIndex: 100
+        
+         });
+            
+        /*HISTORICAL*/
+         var OSOneInchNatgrid = L.tileLayer("https://geo.nls.uk/mapdata3/os/1inch_pop_nat_grid/{z}/{x}/{y}.png",{
+                  title: 'Scotland - OS One Inch, 1945-1948',
+               //   zIndex: 100,
+                  minZoom: 1,
+                  maxZoom: 15,
+                  group_no: '37',
+                  mosaic_id: '2',
+                  type: 'overlay', 
+                 typename: 'nls:WFS',
+                  visible: false,
+                  minx: -7.88182502,
+                  miny: 54.56493209,
+                  maxx: -0.61174401,
+                  maxy: 60.91113681
+         
+        
+            }); 
+        
+        
+         var sixinch = L.tileLayer('https://geo.nls.uk/mapdata3/os/6inchfirst/{z}/{x}/{y}.png',
+            {
+                numZoomLevels: 16,
+               // backgroundColor: '#eee',
+                attribution: 'Overlay NLS <a href="https://maps.nls.uk/os/6inch/index.html" target="_blank">Ordnance Survey Six Inch, 1843-1882</a> maps',
+              //  zIndex: 100,
+                tileOptions: {crossOriginKeyword: null},      
+                minx: -8.4, 
+                miny: 54.5, 
+                maxx: -1.4, 
+                maxy: 58.8
+          
+            });
+        
+         var oneinchseventh = L.tileLayer('https://nls-0.tileserver.com/fpsUZbc4ftb2/{z}/{x}/{y}.jpg',{
+                preload: Infinity,
+          title: "Great Britain - OS One Inch 7th series, 1955-61",
+         // zIndex: 100,
+        
+                      minZoom: 1,
+                      maxZoom: 15,
+                      tilePixelRatio: 1,
+                    
+                group_no: '55',
+                mosaic_id: '11',
+                typename: 'nls:catalog_one_inch_7th_series',
+                type: 'overlay', 
+                visible: false,
+                minx: -8.8, 
+          miny: 49.8,
+                maxx: 1.77, 
+                maxy: 60.9
+                
+            });
+          
+        
+          /*Grouping Overlays */
+            var groupedOverlays = {
+          "<b>Land Capability</b>": {
+            "Land Capability for Agriculture": LCA250k,
+            "Land Capability for Forestry": LCF250k
+          },
+          "<b>Geology<b>": {
+            "GBR BGS 1:625k Bedrock Age": BGS625ksediments,
+            "GBR BGS 1:50k Superficial Deposits":WMS50superficial,
+             "GBR BGS 1:50k Bedrock":WMS50bedrock 
+            
+          },
+        
+            "<b>Historical</b>": {
+            "OS One Inch, 1945-1948": sixinch,
+            "OS First Edition Six Inch 1843-1882":OSOneInchNatgrid,  
+            "OS One Inch 7th series, 1955-61" : oneinchseventh
+          
+            
+          }
+        };
+        /*Add maps to grouped overlays */
+         L.control.groupedLayers(baseLayers, groupedOverlays,{collapsed:false}).addTo(map1)
+         L.control.groupedLayers(baseLayers, groupedOverlays,{collapsed:false}).addTo(map2)
+        
+        
+        
+         //sets the zoom level of the BGS 1:50k maps
+        
+            map1.on('overlayadd', function(eo) {
+              if (eo.name === 'GBR BGS 1:50k Superficial Deposits' || eo.name === 'GBR BGS 1:50k Bedrock') {
+                map1.setZoom(15);
+        
+               } else {
+                
+            }
+            });
+        
+              map2.on('overlayadd', function(eo) {
+              if (eo.name === 'GBR BGS 1:50k Superficial Deposits' || eo.name === 'GBR BGS 1:50k Bedrock') {
+                map2.setZoom(15);
+              
+        
+               } else {
+              
+            }
+            });
+    </script>
+</body>
+
+</html>
